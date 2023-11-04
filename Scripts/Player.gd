@@ -43,9 +43,8 @@ func move(delta) :
 	if(is_on_floor()):
 		has_jumped = false
 
-	print("\nDirection: ", direction)
-	print("Velocity.x: ", velocity.x)
 
 func jump():
-	velocity.y = -jump_impulse
-	has_jumped = true
+	if (can_jump) :
+		velocity.y = -jump_impulse
+		has_jumped = true

@@ -82,7 +82,7 @@ position = Vector2(2949, 1707)
 
 [node name="Human" parent="." instance=ExtResource("1_kgbgo")]
 position = Vector2(517, 303)
-speed = 80000.0
+speed = 40000.0
 gravity = 3000.0
 jump_impulse = 1000.0
 

@@ -37,6 +37,11 @@ func _ready() :
 func input_loop() :	
 	super()
 	
+	if (Input.is_action_pressed("p1_mv_left")) :
+		last_direction = false
+	if (Input.is_action_pressed("p1_mv_right")) :
+		last_direction = true
+	
 	if (!crouching and direction == 0 and au_repos) :
 		_animation_player.play("repos")
 	
@@ -64,22 +69,18 @@ func input_loop() :
 	
 	if (Input.is_action_pressed(playerNb + "_mv_left") and !crouching and au_repos) :
 		get_node("Sprite2D").set_flip_h(false)
-		last_direction = false
 		_animation_player.play("walk_default_left")
 	
 	if (Input.is_action_pressed(playerNb + "_mv_right") and !crouching and au_repos) :
 		get_node("Sprite2D").set_flip_h(true)
-		last_direction = true
 		_animation_player.play("walk_default_left")
 		
 	if (Input.is_action_pressed(playerNb + "_mv_left") and crouching and au_repos) :
 		get_node("Sprite2D").set_flip_h(false)
-		last_direction = false
 		_animation_player.play("walk_crouch")
 	
 	if (Input.is_action_pressed(playerNb + "_mv_right") and crouching and au_repos) :
 		get_node("Sprite2D").set_flip_h(false)
-		last_direction = true
 		_animation_player.play("walk_crouch_right")
 	
 
@@ -87,6 +88,8 @@ func crouch() :
 	speed = speed_crouching
 	au_repos = false
 	if (last_direction) :
+		print("oi")
+		get_node("Sprite2D").set_flip_h(false)
 		_animation_player.play("crouching_right")
 	else :
 		_animation_player.play("crouching")
