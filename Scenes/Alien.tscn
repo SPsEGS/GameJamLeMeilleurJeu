@@ -6,9 +6,9 @@
 [node name="Alien" instance=ExtResource("1_eucf8")]
 script = ExtResource("2_nrh6b")
 grapple_max_distance = 10000
-
-[node name="Camera2D" parent="." index="2"]
-enabled = true
+grapple_reaction_strength = 1000.0
+grapple_reel_speed = 5.0
+drag = 7.0
 
 [node name="GrappleRaycast" type="RayCast2D" parent="." index="3"]
 target_position = Vector2(0, 0)
