@@ -1,10 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://b27247h5uin5o"]
+[gd_scene load_steps=36 format=3 uid="uid://b27247h5uin5o"]
 
 [ext_resource type="PackedScene" uid="uid://u5xexd2ip3w6" path="res://Scenes/Player.tscn" id="1_a217f"]
 [ext_resource type="Script" path="res://Scripts/Human.gd" id="2_oufih"]
 [ext_resource type="Texture2D" uid="uid://h6h1225hwqvd" path="res://Assets/Characters/Se lève ou se baisse/1.PNG" id="3_7qkgp"]
 [ext_resource type="Texture2D" uid="uid://cuuec6k0varrm" path="res://Assets/Characters/Tend la main/1.PNG" id="3_bwvnc"]
-[ext_resource type="Texture2D" uid="uid://cbv2020uw8vuw" path="res://Assets/Characters/Marche/3.PNG" id="3_dh42e"]
+[ext_resource type="Texture2D" uid="uid://bavjw5awyi3cu" path="res://Assets/Characters/Marche accroupie/2.PNG" id="3_vengi"]
 [ext_resource type="Texture2D" uid="uid://hquwxo67e3hf" path="res://Assets/Characters/human_face_redim.PNG" id="3_xuikb"]
 [ext_resource type="Texture2D" uid="uid://c868xh1r6mt5v" path="res://Assets/Characters/Tend la main/2.PNG" id="4_28fly"]
 [ext_resource type="Texture2D" uid="uid://copfn6f4c45p3" path="res://Assets/Characters/Se lève ou se baisse/4.PNG" id="5_8rb2n"]
@@ -22,8 +22,11 @@
 [ext_resource type="Texture2D" uid="uid://bjkwo5cgeogim" path="res://Assets/Characters/Se baisse/3.PNG" id="15_084rv"]
 [ext_resource type="Texture2D" uid="uid://cosljaaiw2jp5" path="res://Assets/Characters/Se baisse/4.PNG" id="16_r7p1m"]
 [ext_resource type="Texture2D" uid="uid://c3kgs4qwbgqjr" path="res://Assets/Characters/Se baisse/5.PNG" id="17_aodlk"]
-[ext_resource type="Texture2D" uid="uid://cyy7y7lbksp3p" path="res://Assets/Characters/Marche/1.PNG" id="19_bpoap"]
-[ext_resource type="Texture2D" uid="uid://comtljo0te51i" path="res://Assets/Characters/Marche/2.PNG" id="20_5iqsv"]
+[ext_resource type="Texture2D" uid="uid://bxjq3nmcluhb2" path="res://Assets/Characters/Marche/1 v2.PNG" id="22_3fdut"]
+[ext_resource type="Texture2D" uid="uid://bq4hkfnr84wfo" path="res://Assets/Characters/Marche/2 v2.PNG" id="23_o7i4n"]
+[ext_resource type="Texture2D" uid="uid://hifqnaduk4a7" path="res://Assets/Characters/Marche/3 v2.PNG" id="24_qejdr"]
+[ext_resource type="Texture2D" uid="uid://mkfl4twi33w4" path="res://Assets/Characters/Marche accroupie/1.png" id="26_1mh2q"]
+[ext_resource type="Texture2D" uid="uid://dv8ggrxk73wkk" path="res://Assets/Characters/Marche accroupie/3.PNG" id="27_2o3cg"]
 
 [sub_resource type="Animation" id="Animation_hk862"]
 resource_name = "crouching"
@@ -38,7 +41,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2(1, 1), Vector2(2, 0.45)]
+"values": [Vector2(1, 1), Vector2(2, 0.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -59,10 +62,10 @@ tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2(0, 0), Vector2(-50, 0), Vector2(-50, 0)]
+"values": [Vector2(0, 0), Vector2(-50, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -74,7 +77,19 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2(0, -0.5), Vector2(-25, 25)]
+"values": [Vector2(0, -0.5), Vector2(-25, 30)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0.05, 0.05), Vector2(0.05, 0.057)]
 }
 
 [sub_resource type="Animation" id="Animation_gcjcd"]
@@ -135,29 +150,66 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_g66ty"]
 resource_name = "un_crouching"
+length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.05, 0.025), Vector2(0.05, 0.05)]
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_7qkgp"), ExtResource("7_6y6ph"), ExtResource("6_kdjb4"), ExtResource("5_8rb2n"), ExtResource("3_xuikb")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:scale")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(0, 1.2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 0.5), Vector2(1, 1)]
+"update": 1,
+"values": [Vector2(-50, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-25, 30), Vector2(0, -0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CollisionShape2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(2, 0.5), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0001, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0.05, 0.057), Vector2(0.05, 0.057), Vector2(0.05, 0.05)]
 }
 
 [sub_resource type="Animation" id="Animation_684rc"]
@@ -169,10 +221,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 0.6, 0.9),
+"times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("19_bpoap"), ExtResource("20_5iqsv"), ExtResource("3_dh42e")]
+"values": [ExtResource("22_3fdut"), ExtResource("23_o7i4n"), ExtResource("24_qejdr")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -181,10 +233,89 @@ tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.3, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, 0)]
+"values": [Vector2(0, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, -0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_utjs8"]
+resource_name = "walk_crouch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_7qkgp"), ExtResource("26_1mh2q"), ExtResource("3_vengi"), ExtResource("27_2o3cg"), ExtResource("3_vengi")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-50, 0), Vector2(-22.45, 18.2)]
+}
+
+[sub_resource type="Animation" id="Animation_gpv15"]
+resource_name = "repos"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_xuikb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2457e"]
@@ -192,19 +323,26 @@ _data = {
 "crouching": SubResource("Animation_hk862"),
 "hand_up": SubResource("Animation_gcjcd"),
 "pick_champi": SubResource("Animation_rtmwy"),
+"repos": SubResource("Animation_gpv15"),
 "un_crouching": SubResource("Animation_g66ty"),
+"walk_crouch": SubResource("Animation_utjs8"),
 "walk_default_left": SubResource("Animation_684rc")
 }
 
 [node name="CharacterBody2D" instance=ExtResource("1_a217f")]
 script = ExtResource("2_oufih")
+speed = null
+gravity = null
+jump_impulse = null
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("3_xuikb")
+position = Vector2(-50, 0)
+scale = Vector2(0.05, 0.057)
+texture = ExtResource("3_7qkgp")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, -0.5)
+position = Vector2(-25, 30)
+scale = Vector2(2, 0.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 root_node = NodePath("../Sprite2D")

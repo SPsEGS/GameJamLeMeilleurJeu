@@ -5,6 +5,7 @@ class_name Player
 @export var speed : float = 80000
 @export var gravity : float = 3000
 @export var jump_impulse : float = 1000
+@export var can_jump : bool = true
 var playerNb : String;
 
 var direction : float = 0
@@ -24,8 +25,9 @@ func move(delta) :
 		has_jumped = false
 
 func jump():
-	velocity.y = -jump_impulse
-	has_jumped = true
+	if (can_jump) :
+		velocity.y = -jump_impulse
+		has_jumped = true
 
 func _process(delta):
 	input_loop()
