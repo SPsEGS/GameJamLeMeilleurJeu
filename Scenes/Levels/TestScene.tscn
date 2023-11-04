@@ -81,8 +81,7 @@ position = Vector2(5005, 2771)
 position = Vector2(2949, 1707)
 
 [node name="Human" parent="." instance=ExtResource("1_kgbgo")]
+position = Vector2(517, 303)
 
 [node name="Alien" parent="." instance=ExtResource("5_yromd")]
-speed = 80000.0
-gravity = 3000.0
-jump_impulse = 1000.0
+position = Vector2(282, 296)

@@ -6,7 +6,7 @@ var reel_speed = speed
 
 @onready var _animation_player = $AnimationPlayer
 
-func ready():
+func _ready():
 	playerNb = "p1"
 
 func input_loop() :

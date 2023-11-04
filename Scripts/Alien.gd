@@ -2,6 +2,5 @@ extends Player
 
 class_name Alien
 
-func ready():
-	setPlayerNb("p2")
-#	playerNb = "p2"
+func _ready():
+	playerNb = "p2"

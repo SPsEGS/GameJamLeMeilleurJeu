@@ -10,8 +10,6 @@ var playerNb : String;
 var direction : float = 0
 var has_jumped : bool = false
 
-func setPlayerNb(p: String):
-	playerNb = p
 
 func input_loop() :
 	direction = int(Input.is_action_pressed(playerNb + "_mv_right")) - int(Input.is_action_pressed(playerNb + "_mv_left"))
