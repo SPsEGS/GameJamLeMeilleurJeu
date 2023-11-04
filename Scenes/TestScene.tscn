@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlbw67oxmpdvx"]
+[gd_scene load_steps=6 format=3 uid="uid://dlbw67oxmpdvx"]
 
 [ext_resource type="PackedScene" uid="uid://bqatknae6grwl" path="res://Scenes/Gros_champi.tscn" id="1_cr2hd"]
 [ext_resource type="PackedScene" uid="uid://b27247h5uin5o" path="res://Scenes/Human.tscn" id="1_tjoji"]
+[ext_resource type="PackedScene" uid="uid://bv4xggjtrwwke" path="res://Scenes/Petit_champi.tscn" id="2_3xct0"]
 [ext_resource type="Texture2D" uid="uid://dv76vp6l72tk8" path="res://icon.svg" id="2_bav56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j08r"]
@@ -9,10 +10,14 @@ size = Vector2(127.7, 129)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="StaticBody2D" parent="." instance=ExtResource("1_cr2hd")]
+[node name="Gros_champi" parent="." instance=ExtResource("1_cr2hd")]
 position = Vector2(314, 639)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_tjoji")]
+[node name="Petit_champi" parent="." instance=ExtResource("2_3xct0")]
+position = Vector2(764, 701)
+
+[node name="Human" parent="." instance=ExtResource("1_tjoji")]
+position = Vector2(240, -3)
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 position = Vector2(635, 791)
@@ -52,7 +57,7 @@ position = Vector2(0.0500031, -1.5)
 shape = SubResource("RectangleShape2D_5j08r")
 
 [node name="Area2D4" type="StaticBody2D" parent="."]
-position = Vector2(-54, 229)
+position = Vector2(-39, 215)
 rotation = 1.57018
 scale = Vector2(10, 1)
 metadata/_edit_group_ = true
