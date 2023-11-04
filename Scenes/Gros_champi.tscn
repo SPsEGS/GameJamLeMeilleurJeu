@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqatknae6grwl"]
 
-[ext_resource type="Texture2D" uid="uid://dv76vp6l72tk8" path="res://icon.svg" id="1_ond1n"]
 [ext_resource type="Script" path="res://Scripts/gros_champi.gd" id="1_xv42h"]
+[ext_resource type="Texture2D" uid="uid://be2o6b7uq3ycw" path="res://Assets/Champignons séparés/champi gros lumière_redim.png" id="2_14ub6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f52og"]
 size = Vector2(152, 153)
@@ -30,8 +30,9 @@ _data = {
 script = ExtResource("1_xv42h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("1_ond1n")
+position = Vector2(0.5, -3.49999)
+scale = Vector2(1.51639, 1.7395)
+texture = ExtResource("2_14ub6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

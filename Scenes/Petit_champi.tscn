@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bv4xggjtrwwke"]
 
 [ext_resource type="Script" path="res://Scripts/Petit_champi.gd" id="1_0tppo"]
-[ext_resource type="Texture2D" uid="uid://dv76vp6l72tk8" path="res://icon.svg" id="2_2vaom"]
+[ext_resource type="Texture2D" uid="uid://db7ymnvwbyddi" path="res://Assets/Champignons séparés/champi petit lumineux_redimensionné.png" id="2_rc7im"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_046qf"]
-size = Vector2(31, 36)
+size = Vector2(125, 65)
 
 [sub_resource type="Animation" id="Animation_26hkm"]
 length = 0.001
@@ -47,11 +47,11 @@ _data = {
 script = ExtResource("1_0tppo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.273438, 0.273438)
-texture = ExtResource("2_2vaom")
+scale = Vector2(0.995614, 0.93418)
+texture = ExtResource("2_rc7im")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 1)
+position = Vector2(-0.5, -19.5)
 shape = SubResource("RectangleShape2D_046qf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
