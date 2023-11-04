@@ -13,5 +13,7 @@ script = ExtResource("1_7fyqf")
 texture = ExtResource("2_14w52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_m10ex")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
