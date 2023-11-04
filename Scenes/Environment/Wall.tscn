@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykhct"]
 size = Vector2(128, 129)
 
-[node name="Area2D" type="StaticBody2D"]
+[node name="Wall" type="StaticBody2D"]
 rotation = -1.5708
 scale = Vector2(5, 1)
 metadata/_edit_group_ = true
