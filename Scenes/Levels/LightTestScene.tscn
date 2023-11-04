@@ -9,9 +9,9 @@
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_tq0vx")]
 position = Vector2(320, 704)
-speed = null
-gravity = null
-jump_impulse = null
+speed = 80000.0
+gravity = 3000.0
+jump_impulse = 1000.0
 metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]

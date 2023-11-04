@@ -11,6 +11,7 @@ var which_mush : Petit_champi
 var baby_mush : Node
 var mush_parent
 var au_repos = true
+var last_direction = true
 
 @onready var _animation_player = $AnimationPlayer
 
@@ -48,7 +49,10 @@ func input_loop() :
 			speed = reel_speed
 			crouching = false
 			au_repos = false
-			_animation_player.play("un_crouching")
+			if (last_direction) :
+				_animation_player.play("un_crouching_right")
+			else :
+				_animation_player.play("un_crouching")
 			await get_tree().create_timer(0.8).timeout
 			au_repos = true
 
@@ -60,25 +64,32 @@ func input_loop() :
 	
 	if (Input.is_action_pressed(playerNb + "_mv_left") and !crouching and au_repos) :
 		get_node("Sprite2D").set_flip_h(false)
+		last_direction = false
 		_animation_player.play("walk_default_left")
 	
 	if (Input.is_action_pressed(playerNb + "_mv_right") and !crouching and au_repos) :
 		get_node("Sprite2D").set_flip_h(true)
+		last_direction = true
 		_animation_player.play("walk_default_left")
 		
 	if (Input.is_action_pressed(playerNb + "_mv_left") and crouching and au_repos) :
 		get_node("Sprite2D").set_flip_h(false)
+		last_direction = false
 		_animation_player.play("walk_crouch")
 	
 	if (Input.is_action_pressed(playerNb + "_mv_right") and crouching and au_repos) :
-		get_node("Sprite2D").set_flip_h(true)
-		_animation_player.play("walk_crouch")
+		get_node("Sprite2D").set_flip_h(false)
+		last_direction = true
+		_animation_player.play("walk_crouch_right")
 	
 
 func crouch() :
 	speed = speed_crouching
 	au_repos = false
-	_animation_player.play("crouching")
+	if (last_direction) :
+		_animation_player.play("crouching_right")
+	else :
+		_animation_player.play("crouching")
 	if (hold_object) :
 		throw_mush()
 	await get_tree().create_timer(0.8).timeout
