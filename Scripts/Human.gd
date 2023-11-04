@@ -6,6 +6,9 @@ var reel_speed = speed
 
 @onready var _animation_player = $AnimationPlayer
 
+func _ready():
+	playerNb = "p1"
+
 func input_loop() :
 	direction = int(Input.is_action_pressed("p1_mv_right")) - int(Input.is_action_pressed("p1_mv_left"))
 	if(Input.is_action_pressed("p1_jump") and is_on_floor() and !has_jumped and !crouching):
