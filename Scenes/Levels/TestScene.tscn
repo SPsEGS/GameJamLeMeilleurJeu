@@ -1,14 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlbw67oxmpdvx"]
+[gd_scene load_steps=6 format=3 uid="uid://dlbw67oxmpdvx"]
 
-[ext_resource type="PackedScene" uid="uid://b27247h5uin5o" path="res://Scenes/Human.tscn" id="1_kgbgo"]
+[ext_resource type="PackedScene" uid="uid://ce1ye3n64qj02" path="res://Scenes/Human.tscn" id="1_kgbgo"]
 [ext_resource type="PackedScene" uid="uid://dxww3htj70b5o" path="res://Scenes/Environment/Wall.tscn" id="2_4lqbp"]
 [ext_resource type="PackedScene" uid="uid://cqoi6d4l3w2dl" path="res://Scenes/Environment/Ceiling.tscn" id="3_cghvi"]
 [ext_resource type="PackedScene" uid="uid://c3oommgjqix5" path="res://Scenes/Environment/Floor.tscn" id="4_ri4jy"]
+[ext_resource type="PackedScene" uid="uid://ci5urs8mk4yxg" path="res://Scenes/Alien.tscn" id="5_yromd"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_kgbgo")]
-position = Vector2(399, 263)
 
 [node name="Area2D" parent="." instance=ExtResource("2_4lqbp")]
 position = Vector2(71, 318)
@@ -81,3 +79,10 @@ position = Vector2(5005, 2771)
 
 [node name="Area2D23" parent="." instance=ExtResource("3_cghvi")]
 position = Vector2(2949, 1707)
+
+[node name="Human" parent="." instance=ExtResource("1_kgbgo")]
+
+[node name="Alien" parent="." instance=ExtResource("5_yromd")]
+speed = 80000.0
+gravity = 3000.0
+jump_impulse = 1000.0
