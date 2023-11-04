@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk5cwt3kdigr7"]
+
+[ext_resource type="PackedScene" uid="uid://u5xexd2ip3w6" path="res://Scenes/Player.tscn" id="1_eucf8"]
+[ext_resource type="Script" path="res://Scripts/Alien.gd" id="2_nrh6b"]
+
+[node name="CharacterBody2D" instance=ExtResource("1_eucf8")]
+script = ExtResource("2_nrh6b")
