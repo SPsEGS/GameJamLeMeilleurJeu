@@ -47,6 +47,7 @@ func grapple_release():
 	grapple_is_attached = false
 
 func grapple_move():
+	pass
 
 func _process(delta):
 	super(delta)
