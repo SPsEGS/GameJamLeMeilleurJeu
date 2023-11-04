@@ -13,6 +13,9 @@ var mush_parent
 
 @onready var _animation_player = $AnimationPlayer
 
+func anim_hand() :
+	_animation_player.play("hand_up")
+
 func can_interact() :
 	return (!hold_object and !crouching)
 

@@ -9,6 +9,7 @@ func _process(_delta) :
 	var player := who as Human
 	if (player) :
 		if (is_reachable && Input.is_action_just_pressed("p1_interact") and player.can_interact()) :
+			player.anim_hand()
 			_animation_champi.play("flash")
 
 func _on_body_entered(body):
