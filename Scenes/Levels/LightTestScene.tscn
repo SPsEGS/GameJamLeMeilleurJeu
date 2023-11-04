@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmdq3j51y0v1b"]
 
 [ext_resource type="PackedScene" uid="uid://dxww3htj70b5o" path="res://Scenes/Environment/Wall.tscn" id="1_1hnfn"]
-[ext_resource type="PackedScene" uid="uid://b27247h5uin5o" path="res://Scenes/Human.tscn" id="1_tq0vx"]
+[ext_resource type="PackedScene" uid="uid://ce1ye3n64qj02" path="res://Scenes/Human.tscn" id="1_tq0vx"]
 [ext_resource type="Texture2D" uid="uid://duc6r40584u8l" path="res://Assets/Textures/Lights/PointLight_neutral.webp" id="2_favqo"]
 [ext_resource type="PackedScene" uid="uid://c3oommgjqix5" path="res://Scenes/Environment/Floor.tscn" id="3_454ly"]
 
