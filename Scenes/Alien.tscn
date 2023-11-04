@@ -5,3 +5,9 @@
 
 [node name="Alien" instance=ExtResource("1_eucf8")]
 script = ExtResource("2_nrh6b")
+grapple_max_distance = 10000
+
+[node name="GrappleRaycast" type="RayCast2D" parent="." index="3"]
+target_position = Vector2(0, 0)
+
+[node name="GrappleLine" type="Line2D" parent="." index="4"]

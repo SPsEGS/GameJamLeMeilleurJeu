@@ -85,3 +85,4 @@ position = Vector2(517, 303)
 
 [node name="Alien" parent="." instance=ExtResource("5_yromd")]
 position = Vector2(282, 296)
+grapple_max_distance = 10000
