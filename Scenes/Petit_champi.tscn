@@ -6,6 +6,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_046qf"]
 size = Vector2(31, 36)
 
+[sub_resource type="Animation" id="Animation_26hkm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_vocoq"]
 resource_name = "flashing"
 loop_mode = 1
@@ -22,28 +37,13 @@ tracks/0/keys = {
 "values": [true, true, false, true]
 }
 
-[sub_resource type="Animation" id="Animation_26hkm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_srpmh"]
 _data = {
 "RESET": SubResource("Animation_26hkm"),
 "flashing": SubResource("Animation_vocoq")
 }
 
-[node name="Area2D" type="Area2D"]
+[node name="piti_champi" type="Area2D"]
 script = ExtResource("1_0tppo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
