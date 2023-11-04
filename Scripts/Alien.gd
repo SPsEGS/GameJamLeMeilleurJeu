@@ -10,6 +10,9 @@ class_name Alien
 var grapple_point : Vector2
 var grapple_is_attached : bool = false
 
+var grapple_target_distance : float
+var grapple_reaction_strength : float = 100
+
 func _ready():
 	playerNb = "p2"
 
@@ -31,6 +34,8 @@ func input_loop():
 
 			if(raycast.is_colliding()):
 				grapple_point = raycast.get_collision_point()
+				grapple_target_distance = position.distance_to(grapple_point)
+				print("Grapple Target Distance: ", grapple_target_distance)
 				grapple_throw()
 	
 	if(Input.is_action_just_released("p2_grapple_throw")):
@@ -46,9 +51,28 @@ func grapple_release():
 	grapple_line.hide()
 	grapple_is_attached = false
 
-func grapple_move():
-	pass
+func grapple_move(delta: float):
+	var pull_direction : Vector2 = position.direction_to(grapple_point)
+	#print("Pull Direction: ", pull_direction.x, ", ", pull_direction.y)
+	var current_distance : float = position.distance_to(grapple_point)
+	#print("Current Distance: ", current_distance)
+	var stretch_factor : float = current_distance - grapple_target_distance
+	print("Stretch Factor: ", stretch_factor)
+	
+	var pull_vector : Vector2 = pull_direction * max(stretch_factor, 0) * grapple_reaction_strength
+	print("Pull Vector: ", pull_vector.x, ", ", pull_vector.y)
+
+	velocity += pull_vector * delta
+	velocity.y += gravity * delta
+	move_and_slide()
+	
 
 func _process(delta):
-	super(delta)
 	grapple_line.set_point_position(1, grapple_point - position)
+
+	input_loop()
+
+	if(grapple_is_attached):
+		grapple_move(delta)
+	else:
+		move(delta)

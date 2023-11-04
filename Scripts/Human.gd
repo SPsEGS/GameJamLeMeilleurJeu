@@ -13,6 +13,9 @@ var mush_parent
 
 @onready var _animation_player = $AnimationPlayer
 
+func anim_hand() :
+	_animation_player.play("hand_up")
+
 func can_interact() :
 	return (!hold_object and !crouching)
 
@@ -43,6 +46,13 @@ func input_loop() :
 	if (Input.is_action_just_pressed(playerNb + "_interact")) :
 		take()
 	
+	if (Input.is_action_pressed(playerNb + "_mv_left")) :
+		get_node("Sprite2D").set_flip_h(false)
+		_animation_player.play("walk_default_left")
+	
+	if (Input.is_action_pressed(playerNb + "_mv_right")) :
+		get_node("Sprite2D").set_flip_h(true)
+		_animation_player.play("walk_default_left")
 	
 
 func crouch() :
@@ -51,6 +61,8 @@ func crouch() :
 	
 func take() :
 	if (!hold_object and on_piti_champi) :
+		_animation_player.play("pick_champi")
+		await get_tree().create_timer(1).timeout
 		hold_object = true
 		mush_parent = which_mush.get_parent()
 		(which_mush.get_parent()).remove_child(which_mush)
