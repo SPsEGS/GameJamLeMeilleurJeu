@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dxww3htj70b5o" path="res://Scenes/Environment/Wall.tscn" id="2_4lqbp"]
 [ext_resource type="PackedScene" uid="uid://cqoi6d4l3w2dl" path="res://Scenes/Environment/Ceiling.tscn" id="3_cghvi"]
 [ext_resource type="PackedScene" uid="uid://c3oommgjqix5" path="res://Scenes/Environment/Floor.tscn" id="4_ri4jy"]
-[ext_resource type="PackedScene" uid="uid://ci5urs8mk4yxg" path="res://Scenes/Alien.tscn" id="5_yromd"]
+[ext_resource type="PackedScene" uid="uid://bk5cwt3kdigr7" path="res://Scenes/Alien.tscn" id="5_yromd"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -81,7 +81,14 @@ position = Vector2(5005, 2771)
 position = Vector2(2949, 1707)
 
 [node name="Human" parent="." instance=ExtResource("1_kgbgo")]
+<<<<<<< Updated upstream
 position = Vector2(517, 303)
 
 [node name="Alien" parent="." instance=ExtResource("5_yromd")]
 position = Vector2(282, 296)
+=======
+position = Vector2(272, 71)
+
+[node name="Alien" parent="." instance=ExtResource("5_yromd")]
+position = Vector2(530, 75)
+>>>>>>> Stashed changes
